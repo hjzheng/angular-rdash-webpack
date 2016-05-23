@@ -1,0 +1,31 @@
+<div class="sidebar-wrapper" ng-class="{'sidebar-expend': $ctrl.expend}">
+    <ul class="sidebar">
+        <li class="sidebar-main">
+            <a ng-click="$ctrl.toggleSidebar()">
+                {{ $ctrl.navigation.title }}
+                <span class="menu-icon glyphicon glyphicon-transfer"></span>
+            </a>
+        </li>
+        <li class="sidebar-title"><span>NAVIGATION</span></li>
+        <li class="sidebar-list" ng-repeat="item in $ctrl.navigation.links" ng-if="item.name !== ''">
+            <a ui-sref="{{item.name}}"> {{item.label}} <span class="menu-icon fa {{item.icon}}"></span></a>
+        </li>
+    </ul>
+    <div class="sidebar-footer">
+        <div class="col-xs-4">
+            <a href="https://github.com/hjzheng/angular-es6-practice" target="_blank">
+                Github
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a href="https://github.com/hjzheng/angular-es6-practice/README.md" target="_blank">
+                About
+            </a>
+        </div>
+        <div class="col-xs-4">
+            <a href="#">
+                Support
+            </a>
+        </div>
+    </div>
+</div>

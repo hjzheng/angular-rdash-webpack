@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Welcome to rdash</title>
+    <meta charset="UTF-8">
+    <!--Set viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% var i = 0;
+    for (var chunk in htmlWebpackPlugin.files.css) { %>
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[chunk] %>"></link>
+    <% } %>
+</head>
+
+<body ng-app="rdashLogin">
+<div class="container col-md-4 col-md-offset-4" ng-controller="LoginCtrl as vm">
+    <div class="alert alert-danger rdashLogin" ng-bind="vm.msg" ng-show="vm.msg"></div>
+    <form class="form-signin" name="vm.loginForm" novalidate>
+        <h2 class="form-signin-heading"><span class="glyphicon glyphicon-send"></span> Rdash <small>Please log in</small></h2>
+        <div class="form-group" ng-class="{'has-error': vm.loginForm.username.$dirty && vm.loginForm.username.$invalid}">
+            <label for="username" class="sr-only">User Name</label>
+            <input type="text" id="username" name="username" class="form-control input" placeholder="User name" ng-required="true" ng-model="vm.user.username">
+            <p ng-show="vm.loginForm.username.$dirty && vm.loginForm.username.$error.required" class="bg-danger ng-scope">
+                User Name can not be empty.
+            </p>
+        </div>
+        <div class="form-group" ng-class="{'has-error': vm.loginForm.password.$dirty && vm.loginForm.password.$invalid}">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input id="inputPassword" type="password" name="password" class="form-control" placeholder="Password"  ng-required="true" ng-model="vm.user.password">
+            <p ng-show="vm.loginForm.password.$dirty && vm.loginForm.password.$error.required" class="bg-danger ng-scope">
+                Password can not be empty.
+            </p>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="vm.loginForm.$invalid" ng-click="vm.login()">Sign in</button>
+    </form>
+</div>
+</body>
+<% var i = 0;
+for (var chunk in htmlWebpackPlugin.files.js) { %>
+<script src="<%= htmlWebpackPlugin.files.js[chunk] %>"></script>
+<% } %>
+</html>
+
