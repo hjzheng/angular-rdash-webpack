@@ -1,0 +1,58 @@
+<div class="header">
+    <div class="user pull-right">
+        <div class="item dropdown" uib-dropdown>
+            <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+                {{$ctrl.username}}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li class="dropdown-header">
+                    Joe Bloggs
+                </li>
+                <li class="divider"></li>
+                <li class="link">
+                    <a href="#">
+                        Profile
+                    </a>
+                </li>
+                <li class="link">
+                    <a href="#">
+                        Menu Item
+                    </a>
+                </li>
+                <li class="link">
+                    <a href="#">
+                        Menu Item
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li class="link" ng-click="$ctrl.logout()">
+                    <a href="#">
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="item dropdown" uib-dropdown>
+            <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+                <i class="glyphicon glyphicon-send"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right">
+                <li class="dropdown-header">
+                    Notifications
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a href="#">Server Down!</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="meta">
+        <div class="page">
+            {{$ctrl.config.title}}
+        </div>
+        <div class="breadcrumb-links">
+            Home / {{$ctrl.config.title}}
+        </div>
+    </div>
+</div>

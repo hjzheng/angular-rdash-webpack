@@ -15,7 +15,10 @@
 <body ng-app="rdashApp">
 <div class="container-fuild" ng-controller="MainCtrl as vm">
     <rdash-sidebar toggle="{{vm.toggle}}" navigation="vm.navigation"></rdash-sidebar>
-    <ui-view></ui-view>
+    <rdash-body>
+        <rdash-headerbar config="vm.navigation" username="{{vm.username}}"></rdash-headerbar>
+        <ui-view></ui-view>
+    </rdash-body>
 </div>
 
 </body>

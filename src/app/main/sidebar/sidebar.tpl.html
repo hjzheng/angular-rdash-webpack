@@ -8,7 +8,7 @@
         </li>
         <li class="sidebar-title"><span>NAVIGATION</span></li>
         <li class="sidebar-list" ng-repeat="item in $ctrl.navigation.links" ng-if="item.name !== ''">
-            <a ui-sref="{{item.name}}"> {{item.label}} <span class="menu-icon fa {{item.icon}}"></span></a>
+            <a ui-sref="{{item.name}}"> {{item.label}} <span class="menu-icon glyphicon {{item.icon}}"></span></a>
         </li>
     </ul>
     <div class="sidebar-footer">

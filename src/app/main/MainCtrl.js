@@ -3,6 +3,7 @@
  * @Date: 16/5/23
  */
 import inject from '../utils/inject';
+import sessionstorage from '../utils/sessionstorage';
 
 @inject('$state', '$rootScope')
 export default class MainCtrl {
@@ -12,19 +13,20 @@ export default class MainCtrl {
 		this.navigation = {
 			title: $state.current.label,
 			links: this.getNavigation($state)
-	    };
-		this.init($rootScope)
-    }
+		};
+		this.username = sessionstorage.get('username');
+		this.init($rootScope);
+	}
 
-	getNavigation ($state) {
+	getNavigation($state) {
 		return $state.get();
 	}
 
-	init ($rootScope){
+	init($rootScope) {
 		var $stateChangeStartCallback = $rootScope.$on('$stateChangeStart', (event, toState) => {
 			this.navigation.title = toState.label;
 		});
 
-		$rootScope.$on("$destroy", $stateChangeStartCallback);
+		$rootScope.$on('$destroy', $stateChangeStartCallback);
 	}
 }

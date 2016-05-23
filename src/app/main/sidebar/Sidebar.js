@@ -17,7 +17,7 @@ export default class Sidebar {
 			this.expend = (this.toggle === 'true');
 			this.toggleSidebar = () => {
 				this.expend = !this.expend;
-			}
+			};
 		};
 	}
 }

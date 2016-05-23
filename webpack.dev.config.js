@@ -52,7 +52,7 @@ module.exports = {
 				test: /\.js$/,
 				loader: 'eslint-loader',
 				exclude: /node_modules/,
-				include: __dirname + 'src'
+				include: __dirname + '/src'
 			}
 		],
 		loaders: [

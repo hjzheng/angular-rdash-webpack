@@ -47,6 +47,19 @@ module.exports = function(config) {
 					{
 						test: /\.woff|\.woff2|\.svg|.eot|\.ttf/,
 						loader: 'url?prefix=font/&limit=10000'
+					},
+					{
+						test: /\.scss$/,
+						loaders: ['style', 'css', 'sass?sourceMap'],
+						exclude: /node_modules/,
+						include: __dirname + '/src'
+					},
+					{
+						test: /\.tpl\.html|\.partial\.html$/,
+						loader: 'html',
+						query: {interpolate: true},
+						exclude: /node_modules/,
+						include: __dirname + '/src'
 					}
 				]
 			},

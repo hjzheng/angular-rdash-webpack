@@ -2,7 +2,6 @@
  * @Author: hjzheng
  * @Date: 16/5/23
  */
- 
 import angular from 'angular';
 import router from './example.router';
 

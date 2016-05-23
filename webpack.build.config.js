@@ -7,8 +7,9 @@ module.exports = {
     // configuration
 	devtool: 'source-map',
 	entry: {
-		app: ['./src/app.js'],
-		libs: ['angular', 'angular-resource']
+		app: ['./src/index.js'],
+		login: ['./src/app/login/login.js'],
+		libs: ['angular', 'angular-resource', 'angular-ui-router']
 	},
 	output: {
 		path: __dirname + '/dist',
@@ -21,10 +22,19 @@ module.exports = {
 	plugins: [
 
 		new HTMLPlugin({
+			template: './src/login.html',
+			filename: 'login.html',
+			inject: false,
+			excludeChunks: ['app']
+		}),
+
+		new HTMLPlugin({
 			template: './src/index.html',
 			filename: 'index.html',
-			inject: false
+			inject: false,
+			excludeChunks: ['login']
 		}),
+
 		new webpack.optimize.CommonsChunkPlugin('libs', 'libs.[hash].js'),
 		new ExtractTextPlugin('[name].[hash].css'),
 		new CleanPlugin('dist'),
@@ -66,6 +76,20 @@ module.exports = {
 			{
 				test: /\.woff|\.woff2|\.svg|.eot|\.ttf/,
 				loader: 'url?prefix=font/&limit=10000'
+			},
+			{
+				test: /\.scss$/,
+				// loaders: ['style', 'css', 'sass?sourceMap'],
+				loader: ExtractTextPlugin.extract('style', 'css', 'sass'),
+				exclude: /node_modules/,
+				include: __dirname + '/src'
+			},
+			{
+				test: /\.tpl\.html|\.partial\.html$/,
+				loader: 'html',
+				query: {interpolate: true},
+				exclude: /node_modules/,
+				include: __dirname + '/src'
 			}
 		]
 	}

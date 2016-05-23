@@ -4,6 +4,7 @@
  */
 import inject from '../utils/inject';
 import './login.scss';
+import sessionstorage from '../utils/sessionstorage';
 
 @inject('$http')
 export default class LoginCtrl {
@@ -15,12 +16,13 @@ export default class LoginCtrl {
 			password: ''
 		};
 		this.msg = '';
-    }
+	}
 
 	login() {
 		this.$http.post('/login', this.user)
 			.then(res => {
 				if (res.data.success) {
+					sessionstorage.set('username', this.user.username);
 					location.href = '/';
 				} else {
 					this.msg = res.data.msg;

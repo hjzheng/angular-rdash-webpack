@@ -10,8 +10,8 @@ function router($stateProvider) {
 		.state('example', {
 			url: '/example',
 			template: template,
-			label: "Example",
-			icon: "fa-tachometer"
+			label: 'Example',
+			icon: 'glyphicon-tint'
 		});
 }
 

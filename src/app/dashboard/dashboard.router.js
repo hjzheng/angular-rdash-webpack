@@ -10,8 +10,8 @@ function router($stateProvider, $urlRouterProvider) {
 		.state('dashboard', {
 			url: '/dashboard',
 			template: template,
-			label: "Dashboard",
-			icon: "fa-tachometer"
+			label: 'Dashboard',
+			icon: 'glyphicon-dashboard'
 		});
 
 	$urlRouterProvider.otherwise('/dashboard');
