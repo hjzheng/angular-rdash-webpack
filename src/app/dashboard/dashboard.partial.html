@@ -1,1 +1,10 @@
 <h2>Dashboard</h2>
+<div class="container-fluid">
+    <div class="row stats-area">
+        <rdash-stats number="{{$ctrl.doneTask}}" comments="Done Tasks" colour="primary" type="tasks"></rdash-stats>
+        <rdash-stats number="{{$ctrl.usedTask}}" comments="Used Tasks" colour="info" type="tasks"></rdash-stats>
+        <rdash-stats number="{{$ctrl.totalTask}}" comments="Total Tasks" colour="success" type="tasks"></rdash-stats>
+        <rdash-stats number="500" comments="Just a Test" colour="success" type="tasks"></rdash-stats>
+    </div>
+</div>
+

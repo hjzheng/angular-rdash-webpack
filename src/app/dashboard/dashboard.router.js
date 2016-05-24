@@ -3,6 +3,7 @@
  */
 
 import template from './dashboard.partial.html';
+import DashboardCtrl from './DashboardCtrl';
 
 function router($stateProvider, $urlRouterProvider) {
 
@@ -11,7 +12,9 @@ function router($stateProvider, $urlRouterProvider) {
 			url: '/dashboard',
 			template: template,
 			label: 'Dashboard',
-			icon: 'glyphicon-dashboard'
+			icon: 'glyphicon-dashboard',
+			controller: DashboardCtrl,
+			controllerAs: '$ctrl'
 		});
 
 	$urlRouterProvider.otherwise('/dashboard');

@@ -77,6 +77,12 @@ module.exports = {
 				exclude: /node_modules/,
 				include: __dirname + '/src'
 			},
+			// {
+			// 	test: /^((?!\.tpl|index|login).)*\.html$/,
+			// 	loader: 'file?name=[path][name]-[hash:8].[ext]',
+			// 	exclude: NODE_MODULE_PATH,
+			// 	include: SRC_PATH
+			// },
 			{
 				test: /\.tpl\.html|\.partial\.html$/,
 				loader: 'html',
