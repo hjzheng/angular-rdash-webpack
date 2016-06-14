@@ -4,7 +4,7 @@
  */
 import angular from 'angular';
 import router from './dashboard.router';
-import Stats from './Stats';
+import Stats from './stats/Stats';
 
 export default angular
 	.module('rdashApp.dashboard', [])

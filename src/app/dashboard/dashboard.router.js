@@ -1,7 +1,6 @@
 /**
  * Created by hjzheng on 16/5/23.
  */
-
 import template from './dashboard.partial.html';
 import DashboardCtrl from './DashboardCtrl';
 
