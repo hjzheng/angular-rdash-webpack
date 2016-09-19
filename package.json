@@ -1,7 +1,7 @@
 {
-  "name": "es6-practice-webpack",
+  "name": "angular-rdash-webpack",
   "version": "1.0.0",
-  "description": "Use webpack build es6",
+  "description": "AngularJS1.x + Webpack + ES6 尝试",
   "main": "index.js",
   "scripts": {
     "test": "karma start",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hjzheng/es6-practice-webpack.git"
+    "url": "git+https://github.com/hjzheng/angular-rdash-webpack.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hjzheng/es6-practice-webpack/issues"
+    "url": "https://github.com/hjzheng/angular-rdash-webpack/issues"
   },
-  "homepage": "https://github.com/hjzheng/es6-practice-webpack#readme",
+  "homepage": "https://github.com/hjzheng/angular-rdash-webpack#readme",
   "devDependencies": {
     "angular-mocks": "^1.5.5",
     "babel": "^6.5.2",
